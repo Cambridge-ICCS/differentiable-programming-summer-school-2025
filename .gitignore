@@ -12,8 +12,6 @@
 
 # Exercise outputs
 *.csv
-exercises/ode/forward
-exercises/ode/backward
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
