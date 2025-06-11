@@ -1,6 +1,6 @@
 include "central_diff_d.f90"
 
-! Program for computing the Jacobian
+! Naive program for computing a tridiagonal Jacobian
 program dense_jacobian
   implicit none
 
