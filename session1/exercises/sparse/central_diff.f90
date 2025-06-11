@@ -1,17 +1,20 @@
 ! Central difference approximation for the second derivative of a periodic 1D function
-subroutine central_diff(u, h, f)
+subroutine central_diff(u, f, h, n)
   implicit none
 
-  real, intent(in), dimension(:) :: u
+  integer, intent(in) :: n
+  real, intent(in), dimension(n) :: u
+  real, intent(out), dimension(n) :: f
   real, intent(in) :: h
-  real, intent(out), dimension(:) :: f
 
   integer :: i
-  integer :: n
 
-  n = size(u, 1)
+  if (size(u, 1) /= n) then
+    print *, "Invalid input array size"
+    stop 1
+  end if
   if (size(f, 1) /= n) then
-    print *, "Mismatching sizes for input and output arrays"
+    print *, "Invalid output array size"
     stop 1
   end if
 
