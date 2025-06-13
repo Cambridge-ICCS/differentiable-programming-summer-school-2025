@@ -1,12 +1,15 @@
 # Tapenade outputs
 *_b.f90
 *_d.f90
+*_bv.f90
+*_dv.f90
 *.msg
 
 # Apple Desktop Services Store
 **.DS_Store
 
 # Build files
+*.mod
 *.o
 *.out
 
