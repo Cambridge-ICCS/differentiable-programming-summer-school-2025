@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
+
+[project]
+name = "differentiable-programming-summer-school-2025"
+version = "0.1.0"
+description = "Differentiable Programming Course at ICCS Summer School 2025"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.3",
+    "mpltools>=0.2.0",
+    "numpy>=2.3.0",
+    "pandas>=2.3.0",
+    "torch>=2.7.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "nbstripout>=0.8.1",
+    "pre-commit>=4.2.0",
+    "ruff>=0.11.13",
+]
