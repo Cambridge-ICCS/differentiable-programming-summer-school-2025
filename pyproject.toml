@@ -17,7 +17,7 @@ dependencies = [
     "mpltools>=0.2.0",
     "numpy>=2.3.0",
     "pandas>=2.3.0",
-    "torch>=2.7.1",
+    # "torch>=2.7.1", # NOTE: Sufficient to just install the CPU version
 ]
 
 [project.optional-dependencies]
