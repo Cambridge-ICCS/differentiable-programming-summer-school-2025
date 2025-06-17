@@ -1,4 +1,0 @@
-jupyter
-mpltools
-numpy
-pandas
