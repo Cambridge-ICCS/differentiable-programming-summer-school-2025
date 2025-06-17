@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Create a Python virtual environment and pip install all requirements
-python3 -m venv .venv
-source .venv/bin/activate
-echo "source $(pwd)/.venv/bin/activate" >>${HOME}/.bashrc
+# Pip install all requirements
 pip install .
 pip install torch --index-url https://download.pytorch.org/whl/cpu
 
@@ -13,3 +10,6 @@ tar xvf tapenade_3.16.tar
 rm tapenade_3.16.tar
 export PATH=${PWD}/tapenade_3.16/bin:${PATH}
 echo "export PATH=${PWD}/tapenade_3.16/bin:${PATH}" >>${HOME}/.bashrc
+
+# Copy over Firedrake notebooks
+cp -r /opt/firedrake/docs/notebooks session2/exercises/firedrake/
