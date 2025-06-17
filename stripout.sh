@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Check if .venv is active
-if [[ "${VIRTUAL_ENV}" != *".venv"* ]] || [[ -z "${VIRTUAL_ENV}" ]]; then
-  echo "Error: .venv virtual environment is not active"
-  echo "Please activate it with: source .venv/bin/activate"
-  exit 1
-fi
-
 # Check if nbstripout is installed
 if ! command -v nbstripout &>/dev/null; then
   echo "Error: nbstripout is not installed"
