@@ -121,6 +121,10 @@ ENV/
 env.bak/
 venv.bak/
 
+# lock files different from pylock.toml
+uv.lock
+Pipfile.lock
+
 # mypy
 .mypy_cache/
 .dmypy.json
