@@ -5,6 +5,12 @@
 *_dv.f90
 *.msg
 
+# Solutions
+*_sol.f90
+
+# Temporary files
+tmp.*
+
 # Apple Desktop Services Store
 **.DS_Store
 
