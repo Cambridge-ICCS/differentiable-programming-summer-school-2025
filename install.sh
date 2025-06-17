@@ -2,7 +2,7 @@
 
 # Create a Python virtual environment and pip install all requirements
 python3 -m venv .venv
-source venv/bin/activate
+source .venv/bin/activate
 echo "source $(pwd)/.venv/bin/activate" >>${HOME}/.bashrc
 pip install torch --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
