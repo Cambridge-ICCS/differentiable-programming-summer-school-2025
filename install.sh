@@ -4,8 +4,7 @@
 python3 -m venv .venv
 source .venv/bin/activate
 echo "source $(pwd)/.venv/bin/activate" >>${HOME}/.bashrc
-pip install torch --index-url https://download.pytorch.org/whl/cpu
-pip install -r requirements.txt
+pip install .
 
 # Install Tapenade and put it in the path
 wget https://tapenade.gitlabpages.inria.fr/tapenade/distrib/tapenade_3.16.tar
