@@ -20,6 +20,8 @@
         // Set *default* container specific settings.json values on container create.
         "settings": {},
         "extensions": [
+          "ms-toolsai.jupyter",
+          "ms-python.python"
         ],
       },
       // Define the landing page in the codespace to be the codespace README
