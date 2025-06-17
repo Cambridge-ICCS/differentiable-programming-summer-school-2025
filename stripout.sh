@@ -1,7 +1,7 @@
 #/bin/bash
 
 # Check if .venv is active
-if [[ "$VIRTUAL_ENV" != *".venv"* ]] || [[ -z "$VIRTUAL_ENV" ]]; then
+if [[ "${VIRTUAL_ENV}" != *".venv"* ]] || [[ -z "${VIRTUAL_ENV}" ]]; then
     echo "Error: .venv virtual environment is not active"
     echo "Please activate it with: source .venv/bin/activate"
     exit 1
