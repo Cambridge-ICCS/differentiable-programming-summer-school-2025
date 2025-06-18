@@ -22,7 +22,7 @@
         "extensions": [
           "ms-toolsai.jupyter",
           "ms-python.python",
-          "fortran-lang.vscode-fortran-support"
+          "fortran-lang.linter-gfortran"
         ],
       },
       // Define the landing page in the codespace to be the codespace README
