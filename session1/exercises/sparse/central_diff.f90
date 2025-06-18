@@ -13,7 +13,7 @@ subroutine central_diff(u, approx, h, n)
     print *, "Invalid input array size"
     stop 1
   end if
-  if (size(f, 1) /= n) then
+  if (size(approx, 1) /= n) then
     print *, "Invalid output array size"
     stop 1
   end if
