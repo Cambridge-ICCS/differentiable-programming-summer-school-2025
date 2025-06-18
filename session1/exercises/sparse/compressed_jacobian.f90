@@ -8,7 +8,7 @@ program compressed_jacobian
   real, parameter :: h = 1.0
 
   real, dimension(n) :: u, ud
-  real, dimension(n) :: f, fd
+  real, dimension(n) :: approx, approxd
   real, dimension(n,n) :: jacobian
   integer :: i, j
 
@@ -23,7 +23,7 @@ program compressed_jacobian
 
     ! Apply the JVP to seed vectors based on the offsets
     ud(i::3) = 1.0
-    call central_diff_d(u, ud, f, fd, h, n)
+    call central_diff_d(u, ud, approx, approxd, h, n)
     ud(i::3) = 0.0
 
     ! Decompress rows and insert them into the Jacobian
@@ -31,15 +31,15 @@ program compressed_jacobian
     jacobian(i::3,:) = 0.0
     do while (j <= n)
       if (j == 1) then
-        jacobian(j,n) = fd(n)
+        jacobian(j,n) = approxd(n)
       else
-        jacobian(j,j-1) = fd(j-1)
+        jacobian(j,j-1) = approxd(j-1)
       end if
-      jacobian(j,j) = fd(j)
+      jacobian(j,j) = approxd(j)
       if (j == n) then
-        jacobian(j,1) = fd(1)
+        jacobian(j,1) = approxd(1)
       else
-        jacobian(j,j+1) = fd(j+1)
+        jacobian(j,j+1) = approxd(j+1)
       end if
       j = j + 3
     end do
