@@ -1,4 +1,4 @@
-all: clean forward_euler backward_euler gradient_descent
+all: forward_euler backward_euler gradient_descent
 
 FC	= gfortran
 
@@ -14,5 +14,5 @@ gradient_descent:
 	$(FC) gradient_descent.f90 -o gradient_descent
 
 clean:
-	rm -f *.csv *.dat *.mod *.msg *.o *_b.f90 *_bv.f90 *_d.f90 *_dv.f90 *~
+	rm -f *.csv *.dat *.mod *.msg *.o *.out *_b.f90 *_bv.f90 *_d.f90 *_dv.f90 *~
 	rm -f forward_euler backward_euler gradient_descent
