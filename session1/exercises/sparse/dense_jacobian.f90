@@ -13,6 +13,7 @@ program dense_jacobian
 
   implicit none
 
+  logical, parameter :: write = .true. ! Flag for whether to write output to file
   integer, parameter :: n = 10         ! Number of grid points
   real, parameter :: h = 1.0           ! Uniform grid spacing
   real, dimension(n) :: u              ! Input vector
@@ -39,11 +40,13 @@ program dense_jacobian
   call central_diff_dv(u, seed, approx, jacobian, h, n, n)
 
   ! Write out the result to file
-  open(unit=10, file="dense_jacobian.dat")
-  do i = 1, n
-    write(unit=10, fmt=100) jacobian(i,:)
-  end do
-  100 format(10(f4.1,","))
-  close(unit=10)
+  if (write) then
+    open(unit=10, file="dense_jacobian.dat")
+    do i = 1, n
+      write(unit=10, fmt=100) jacobian(i,:)
+    end do
+    100 format(10(f4.1,","))
+    close(unit=10)
+  end if
 
 end program dense_jacobian
