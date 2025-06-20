@@ -6,12 +6,16 @@ include "f_b.f90"
 program dot_product_test
   implicit none
 
-  real :: x, xd, xb
-  real :: y, yd, yb
-  real :: z, zd, zb
+  real :: x, y   ! Primal inputs
+  real :: xd, yd ! Forward mode seeds
+  real :: xb, yb ! Reverse mode derivatives
+  real :: z      ! Primal output
+  real :: zd     ! Forward mode derivative
+  real :: zb     ! Reverse mode seed
 
-  real :: result1, result2
-  real, parameter :: atol = 1e-05
+  real :: result1                 ! LHS of dot product test
+  real :: result2                 ! RHS of dot product test
+  real, parameter :: atol = 1e-05 ! Absolute tolerance for the dot product test
 
   ! Set arbitrary primal input
   x = 1.2
