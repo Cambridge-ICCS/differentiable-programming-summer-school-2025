@@ -36,6 +36,11 @@ program gradient_descent
   thetad = 1.0
 
   do i = 1, maxiter
+    if (i == maxiter) then
+      write(unit=6, fmt="('Reached maximum iterations without convergence')")
+      stop 1
+    end if
+
     ! Write the current iteration, theta, and cost function value to the CSV file
     write(unit=11, fmt=200) i, theta, J
 
@@ -50,8 +55,8 @@ program gradient_descent
       write(unit=6, fmt="('Converged in ',i0,' iterations due to gradient convergence')") i
       exit
     else if (abs(J / J_init) > dtol) then
-      print *, "Detected cost function divergence"
-      error stop 1
+      write(unit=6, fmt="('Detected cost function divergence after ',i0,' iterations')") i
+      stop 1
     end if
     Jd_ = Jd
 
@@ -59,7 +64,7 @@ program gradient_descent
     p = -Jd
     theta = theta + alpha * p
   end do
-  200 format(i3,",",f6.4,","e10.4)
+  200 format(i4,",",f6.4,","e10.4)
 
   ! Remember to close the CSV file
   close(unit=11)
