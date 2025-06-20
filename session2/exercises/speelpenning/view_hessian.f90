@@ -16,14 +16,14 @@ program view_hessian
 
   implicit none
 
-  integer, parameter :: n = nd   ! Input vector size
-  real, dimension(n) :: x        ! Primal input vector
-  real, dimension(nd, n) :: xd   ! Seed matrix for first forward propagation
-  real, dimension(nd0, n) :: xdd ! Seed matrix for second forward propagation
-  real :: f                      ! Primal output, product of all entries
-  real, dimension(n) :: fd       ! Gradient of the speelpenning function
-  real, dimension(n, n) :: fdd   ! Hessian of the speelpenning function
-  integer :: i                   ! Dummy loop index
+  integer, parameter :: n = nd    ! Input vector size
+  real, dimension(n) :: x         ! Primal input vector
+  real, dimension(nd, n) :: xd    ! Seed matrix for first forward propagation
+  real, dimension(nd0, n) :: xdd  ! Seed matrix for second forward propagation
+  real :: f                       ! Primal output, product of all entries
+  real, dimension(nd) :: fd       ! Gradient of the speelpenning function
+  real, dimension(nd0, nd) :: fdd ! Hessian of the speelpenning function
+  integer :: i                    ! Dummy loop index
 
   if ((nd /= n) .or. (nd0 /= n)) then
     print *, "Error: input vector size must match number of seed vectors."
@@ -44,7 +44,7 @@ program view_hessian
   call speelpenning_dv_dv(x, xdd, xd, f, fd, fdd, n, nd, nd0)
 
   ! Print the Hessian matrix to the terminal
-  do i = 1, n
+  do i = 1, nd0
     write(unit=6, fmt=100) fdd(i,:)
   end do
   100 format(f6.1,6(1x,f6.1))
