@@ -24,7 +24,7 @@ program dense_jacobian
 
   if (m /= n) then
     print *, "Error: number of grid points must match number of seed vectors."
-    stop
+    stop 1
   end if
 
   ! Specify some arbitrary input
