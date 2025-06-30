@@ -2,7 +2,6 @@
 
 # Pip install all requirements
 pip install .
-pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 # Install Tapenade and put it in the path
 wget https://tapenade.gitlabpages.inria.fr/tapenade/distrib/tapenade_3.16.tar
