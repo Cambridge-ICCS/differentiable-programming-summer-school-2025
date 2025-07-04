@@ -13,15 +13,15 @@ program compressed_jacobian
 
   implicit none
 
-  logical, parameter :: write = .true. ! Flag for whether to write output to file
-  integer, parameter :: n = 10         ! Number of grid points
-  real, parameter :: h = 1.0           ! Uniform grid spacing
-  real, dimension(n) :: u              ! Input vector
-  real, dimension(n) :: approx         ! Central difference approximation
-  real, dimension(m,n) :: seed         ! Seed matrix for the VJP
-  real, dimension(m,n) :: compressed   ! Compressed Jacobian for the central difference calculation
-  real, dimension(n,n) :: jacobian     ! Jacobian for the central difference calculation
-  integer :: i, j                      ! Dummy indices for looping
+  logical, parameter :: output = .true. ! Flag for whether to write output to file
+  integer, parameter :: n = 10          ! Number of grid points
+  real, parameter :: h = 1.0            ! Uniform grid spacing
+  real, dimension(n) :: u               ! Input vector
+  real, dimension(n) :: approx          ! Central difference approximation
+  real, dimension(m,n) :: seed          ! Seed matrix for the VJP
+  real, dimension(m,n) :: compressed    ! Compressed Jacobian for the central difference calculation
+  real, dimension(n,n) :: jacobian      ! Jacobian for the central difference calculation
+  integer :: i, j                       ! Dummy indices for looping
 
   ! Specify some arbitrary input
   u(:) = 1.0
@@ -36,7 +36,7 @@ program compressed_jacobian
   call central_diff_dv(u, seed, approx, compressed, h, n, m)
 
   ! Write out the compressed result to file
-  if (write) then
+  if (output) then
     open(unit=10, file="compressed_jacobian.dat")
     do i = 1, m
       write(unit=10, fmt=100) compressed(i,:)
@@ -66,7 +66,7 @@ program compressed_jacobian
   end do
 
   ! Write out the result to file
-  if (write) then
+  if (output) then
     open(unit=11, file="decompressed_jacobian.dat")
     do i = 1, n
       write(unit=11, fmt=100) jacobian(i,:)

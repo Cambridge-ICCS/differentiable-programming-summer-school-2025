@@ -13,14 +13,14 @@ program dense_jacobian
 
   implicit none
 
-  logical, parameter :: write = .true. ! Flag for whether to write output to file
-  integer, parameter :: n = 10         ! Number of grid points
-  real, parameter :: h = 1.0           ! Uniform grid spacing
-  real, dimension(n) :: u              ! Input vector
-  real, dimension(n) :: approx         ! Central difference approximation
-  real, dimension(m,n) :: seed         ! Seed matrix for the VJP
-  real, dimension(m,n) :: jacobian     ! Jacobian for the central difference calculation
-  integer :: i                         ! Dummy index for looping
+  logical, parameter :: output = .true. ! Flag for whether to write output to file
+  integer, parameter :: n = 10          ! Number of grid points
+  real, parameter :: h = 1.0            ! Uniform grid spacing
+  real, dimension(n) :: u               ! Input vector
+  real, dimension(n) :: approx          ! Central difference approximation
+  real, dimension(m,n) :: seed          ! Seed matrix for the VJP
+  real, dimension(m,n) :: jacobian      ! Jacobian for the central difference calculation
+  integer :: i                          ! Dummy index for looping
 
   if (m /= n) then
     print *, "Error: number of grid points must match number of seed vectors."
@@ -40,7 +40,7 @@ program dense_jacobian
   call central_diff_dv(u, seed, approx, jacobian, h, n, n)
 
   ! Write out the result to file
-  if (write) then
+  if (output) then
     open(unit=10, file="dense_jacobian.dat")
     do i = 1, n
       write(unit=10, fmt=100) jacobian(i,:)
