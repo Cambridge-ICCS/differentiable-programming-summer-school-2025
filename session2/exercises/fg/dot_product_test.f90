@@ -26,12 +26,12 @@ program dot_product_test
 
   ! Choose a seed for reverse mode and evaluate the first result
   yb = 3.0
-  result1 = yd * yb
+  result1 = dot_product([yd], [yb])
 
   ! Call reverse mode and evaluate the second result
   xb(:) = [0.0, 0.0]
   call f_b(x, xb, y, yb)
-  result2 = sum(xd * xb)
+  result2 = dot_product(xd, xb)
 
   ! Check the two results match within the prespecified tolerance
   if (abs(result1 - result2) < atol) then
