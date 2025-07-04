@@ -1,3 +1,6 @@
+# Tapenade in-project installation (install.sh)
+tapenade_*/
+
 # Tapenade outputs
 *_b.f90
 *_d.f90
