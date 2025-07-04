@@ -1,6 +1,6 @@
-subroutine f(x, y, z)
+subroutine f(x, y)
   implicit none
-  real, intent(in)  :: x, y
-  real, intent(out) :: z
-  z = x * y
+  real, dimension(2), intent(in)  :: x
+  real, intent(out) :: y
+  y = x(1) * x(2)
 end subroutine f
