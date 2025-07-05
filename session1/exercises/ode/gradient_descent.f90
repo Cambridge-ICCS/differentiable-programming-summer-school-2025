@@ -1,18 +1,19 @@
-include "theta.f90"
-include "theta_d.f90"
-include "cost_function_d.f90"
-
 ! Program for optimising the theta parameter for a theta timestepping method for solving the ODE
 !   du/dt = u, u(0)=1
 ! using gradient descent.
 program gradient_descent
+  use theta_methods, only: theta_method
+  use theta_methods_diff, only: theta_method_d
+  use cost, only: cost_function
+  use cost_diff, only: cost_function_d
+
   implicit none
 
   ! Parameters configuring the optimisation method
   integer, parameter :: maxiter = 1000 ! Maximum number of iterations
   real, parameter :: gtol = 1e-05      ! Gradient convergence tolerance
   real, parameter :: dtol = 1.1        ! Cost function divergence tolerance
-  real :: alpha = 0.1                  ! Step length
+  real :: alpha = 0.199                ! Step length
 
   real :: theta  ! Theta parameter to be optimised
   real :: thetad ! Derivative of theta
