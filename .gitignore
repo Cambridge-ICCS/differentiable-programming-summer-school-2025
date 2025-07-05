@@ -8,6 +8,9 @@ tapenade_*/
 *_dv.f90
 *.msg
 
+# Firedrake notebooks pulled in by install.sh
+session2/exercises/firedrake/notebooks/
+
 # Solutions
 *_sol.f90
 
@@ -139,6 +142,8 @@ Pipfile.lock
 .dmypy.json
 dmypy.json
 
+# VS code configs
+.vscode/
 
 # Ruff stuff:
 .ruff_cache/
