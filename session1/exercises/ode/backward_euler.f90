@@ -7,7 +7,7 @@ program backward_euler
 
   real, parameter :: theta = 1.0                        ! Backward Euler corresponds to theta = 1.0
   real :: u                                             ! Solution variable
-  char(len=100), parameter :: filename = "backward.csv" ! Filename to save results to
+  character(len=100), parameter :: filename = "backward.csv" ! Filename to save results to
 
   call theta_method(theta, u, filename)
 end program backward_euler

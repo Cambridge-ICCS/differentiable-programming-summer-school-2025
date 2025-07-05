@@ -7,7 +7,7 @@ program forward_euler
 
   real, parameter :: theta = 0.0                       ! Forward Euler corresponds to theta = 0.0
   real :: u                                            ! Solution variable
-  char(len=100), parameter :: filename = "forward.csv" ! Filename to save results to
+  character(len=100), parameter :: filename = "forward.csv" ! Filename to save results to
 
   call theta_method(theta, u, filename)
 end program forward_euler
