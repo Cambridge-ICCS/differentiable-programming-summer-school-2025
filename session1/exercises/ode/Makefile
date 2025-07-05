@@ -4,14 +4,28 @@ FC	= gfortran
 
 .PHONY: forward_euler backward_euler gradient_descent
 
-forward_euler:
-	$(FC) forward_euler.f90 -o forward_euler
+# Module dependencies
+theta_methods.mod: theta_methods.f90
+	$(FC) -c theta_methods.f90
 
-backward_euler:
-	$(FC) backward_euler.f90 -o backward_euler
+theta_methods_d.mod: theta_methods_d.f90
+	$(FC) -c theta_methods_d.f90
 
-gradient_descent:
-	$(FC) gradient_descent.f90 -o gradient_descent
+cost.mod: cost.f90
+	$(FC) -c cost.f90
+
+cost_d.mod: cost_d.f90
+	$(FC) -c cost_d.f90
+
+# Executables with their dependencies
+forward_euler: forward_euler.f90 theta_methods.mod
+	$(FC) forward_euler.f90 theta_methods.o -o forward_euler
+
+backward_euler: backward_euler.f90 theta_methods.mod
+	$(FC) backward_euler.f90 theta_methods.o -o backward_euler
+
+gradient_descent: gradient_descent.f90 theta_methods.mod theta_methods_d.mod cost.mod cost_d.mod
+	$(FC) gradient_descent.f90 theta_methods.o theta_methods_d.o cost.o cost_d.o -o gradient_descent
 
 clean:
 	rm -f *.csv *.dat *.mod *.msg *.o *.out *_b.f90 *_bv.f90 *_d.f90 *_dv.f90 *~
