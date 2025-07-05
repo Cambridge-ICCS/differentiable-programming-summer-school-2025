@@ -13,7 +13,7 @@ program gradient_descent
   integer, parameter :: maxiter = 1000 ! Maximum number of iterations
   real, parameter :: gtol = 1e-05      ! Gradient convergence tolerance
   real, parameter :: dtol = 1.1        ! Cost function divergence tolerance
-  real :: alpha = 0.199                ! Step length
+  real :: alpha = 0.10                ! Step length
 
   real :: theta  ! Theta parameter to be optimised
   real :: thetad ! Derivative of theta
