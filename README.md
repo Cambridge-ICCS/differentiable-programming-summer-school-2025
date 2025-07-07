@@ -1,4 +1,10 @@
+<img src="images/ICCS_logo.png"  width="355" align="left">
+
+<br><br><br><br><br><br><br>
+
 # Introduction to differentiable programming
+
+![GitHub](https://img.shields.io/github/license/Cambridge-ICCS/differentiable-programming-summer-school-2025)
 
 *This course was developed for the
 [2025 Summer School](https://iccs.cam.ac.uk/events/institute-computing-climate-science-annual-summer-school-2025)
