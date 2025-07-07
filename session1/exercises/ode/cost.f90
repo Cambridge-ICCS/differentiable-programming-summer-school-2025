@@ -1,10 +1,11 @@
-! Cost function evaluating the l2 error at the end time against the analytical solution u(t)=exp(t)
+! Module containing subroutines for cost functions
 module cost
 
   implicit none
 
 contains 
 
+  ! Cost function evaluating the l2 error at the end time against the analytical solution u(t)=exp(t)
   subroutine cost_function(u, J)
     real, intent(in) :: u           ! Numerical solution at the end time
     real, intent(out) :: J          ! Cost function value
