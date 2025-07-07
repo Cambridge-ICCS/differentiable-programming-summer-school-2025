@@ -1,4 +1,4 @@
-<img src="slides/ICCS_logo.png"  width="355" align="left">
+<img src="images/ICCS_logo.png"  width="355" align="left">
 
 <br><br><br><br><br><br><br>
 
