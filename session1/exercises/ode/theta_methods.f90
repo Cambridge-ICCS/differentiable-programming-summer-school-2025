@@ -1,4 +1,4 @@
-! Apply the initial condition for the ODE initial value problem
+! Module containing subroutines for solving the ODE initial value problem
 !   du/dt = u, u(0) = 1
 module theta_methods
 
@@ -9,6 +9,8 @@ module theta_methods
 
 contains
 
+  ! Apply the initial condition for the ODE initial value problem
+  !   du/dt = u, u(0) = 1
   subroutine initial_condition(u0)
     implicit none
     real, intent(out) :: u0   ! Initial condition value
