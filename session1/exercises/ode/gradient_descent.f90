@@ -3,9 +3,9 @@
 ! using gradient descent.
 program gradient_descent
   use theta_methods, only: theta_method
-  use theta_methods_diff, only: theta_method_d
+  use theta_methods_d, only: theta_method_d
   use cost, only: cost_function
-  use cost_diff, only: cost_function_d
+  use cost_d, only: cost_function_d
 
   implicit none
 

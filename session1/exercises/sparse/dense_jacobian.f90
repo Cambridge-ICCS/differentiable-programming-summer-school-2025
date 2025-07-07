@@ -1,7 +1,7 @@
 ! Naive program for computing a tridiagonal Jacobian
 program dense_jacobian
   use diffsizes, only: m => nbdirsmax  ! Number of seed vectors, from diffsizes_dense.f90
-  use central_difference_diffv, only: central_diff_dv ! Tapenade Forward mode derivative
+  use central_difference_dv, only: central_diff_dv ! Tapenade Forward mode derivative
 
   implicit none
 

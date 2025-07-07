@@ -1,18 +1,8 @@
 all: forward_euler backward_euler gradient_descent
 
 FC = gfortran
-TAPENADE = tapenade
 
-.PHONY: all forward_euler backward_euler gradient_descent differentiation clean
-
-# Differentiation steps using Tapenade
-differentiation: theta_methods_d.f90 cost_d.f90
-
-theta_methods_d.f90: theta_methods.f90
-	$(TAPENADE) theta_methods.f90
-
-cost_d.f90: cost.f90
-	$(TAPENADE) cost.f90
+.PHONY: all forward_euler backward_euler gradient_descent clean
 
 # Module dependencies
 theta_methods.mod: theta_methods.f90

@@ -1,15 +1,8 @@
 all: dense_jacobian compressed_jacobian
 
 FC = gfortran
-TAPENADE = tapenade
 
-.PHONY: all dense_jacobian compressed_jacobian differentiation clean
-
-# Differentiation step using Tapenade
-differentiation: central_diff_dv.f90
-
-central_diff_dv.f90: central_diff.f90
-	$(TAPENADE) -head "central_diff(approx)/(u)" -vector central_diff.f90
+.PHONY: all dense_jacobian compressed_jacobian clean
 
 # Module dependencies
 diffsizes_dense.mod: diffsizes_dense.f90
