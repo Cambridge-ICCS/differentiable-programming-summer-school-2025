@@ -1,0 +1,61 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "index.qmd"
+    - "session1/notebook.ipynb"
+    - "session2/notebook.ipynb"
+
+website:
+  title: "Differentiable Programming"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: session1/notebook.ipynb
+        text: "Forward AD"
+      - href: session2/notebook.ipynb
+        text: "Reverse AD"
+
+authors: 
+  - "Joe Wallwork"
+  - "Niccolò Zanotti"
+
+date-format: "MMMM D, YYYY"
+execute:
+  enabled: false # need explicit --execute
+  error: false
+  warning: true
+  message: true
+
+jupyter: python3
+
+format:
+  html:
+    theme: 
+      - cosmo
+    mainfont: "Source Sans Pro"
+    fontsize: 1.1em
+    page-layout: article
+    linestretch: 1.7
+    linkcolor: blue
+    smooth-scroll: true
+    anchor-sections: true
+    citations-hover: true
+    footnotes-hover: true
+    link-external-newwindow: true
+    link-external-icon: true
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    number-sections: false
+    highlight-style: nord
+    code-fold: false
+    code-tools: false
+    code-line-numbers: false
+    code-overflow: scroll
+    embed-resources: true
+    # grid:
+      # sidebar-width: 200px
+      # body-width: 900px
+      # margin-width: 50px

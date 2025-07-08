@@ -1,0 +1,25 @@
+---
+title: "Introduction to Differentiable Programming"
+format:
+  html:
+    toc: false
+---
+
+Derivatives are at the heart of scientific programming. From the Jacobian matrices used to solve nonlinear systems 
+to the gradient vectors used for optimisation methods, from the backpropagation operation in machine learning to 
+the data assimilation methods used in weather forecasting, all of these techniques rely on derivative information. 
+*Differentiable programming* (also known as automatic/algorithmic differentiation (AD)) provides a suite of tools 
+for users to compute derivatives of quantities in their code without any manual encoding. 
+
+In Session 1, we will learn about the history and mathematical background of differentiable programming and 
+investigate “forward mode” using the [Tapenade](https://tapenade.gitlabpages.inria.fr/userdoc/build/html/index.html) AD tool. 
+
+In Session 2, we will learn about adjoint methods and “reverse mode”, investigate deploying reverse mode using 
+[pyadjoint](https://pyadjoint.org/) (an operator-overloading algorithmic differentiation framework for Python), and see some demonstrations of more advanced usage.
+
+##  📓 Notebooks
+
+- 🔗 **[Session 1](session1/notebook.html)**: Forward Mode AD
+- 🔗 **[Session 2](session2/notebook.html)**: Reverse Mode AD
+
+
