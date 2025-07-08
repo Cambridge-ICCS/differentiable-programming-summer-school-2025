@@ -19,7 +19,7 @@ jobs:
 
     - name: Render Quarto project
       run: |
-        quarto render --execute
+        quarto render
         
     - name: Dry run check (PR only)
       if: github.event_name == 'pull_request'
