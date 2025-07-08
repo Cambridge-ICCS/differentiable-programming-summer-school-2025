@@ -10,5 +10,5 @@ rm tapenade_3.16.tar
 export PATH=${PWD}/tapenade_3.16/bin:${PATH}
 echo "export PATH=${PWD}/tapenade_3.16/bin:${PATH}" >>${HOME}/.bashrc
 
-# Copy over Firedrake notebooks
-cp -r /opt/firedrake/docs/notebooks session2/exercises/firedrake/
+# # Session 2: copy over Firedrake notebooks
+# cp -r /opt/firedrake/docs/notebooks session2/exercises/firedrake/
