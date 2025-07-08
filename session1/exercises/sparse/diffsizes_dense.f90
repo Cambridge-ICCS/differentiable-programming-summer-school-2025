@@ -5,5 +5,5 @@ module diffsizes
   private
   public :: nbdirsmax
 
-  integer, parameter :: nbdirsmax = 10
+  integer, parameter :: nbdirsmax = 10000
 end module diffsizes
