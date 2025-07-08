@@ -7,7 +7,7 @@ FC	= gfortran
 diffsizes_hessian.mod: diffsizes_hessian.f90
 	$(FC) -c diffsizes_hessian.f90
 
-speelpenning_dv_dv.mod: speelpenning_dv_dv.f90 diffsizes.mod
+speelpenning_dv_dv.mod: speelpenning_dv_dv.f90 diffsizes_hessian.mod
 	$(FC) -c speelpenning_dv_dv.f90
 
 view_hessian: speelpenning_dv_dv.mod view_hessian.f90
