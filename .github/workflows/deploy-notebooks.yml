@@ -1,0 +1,40 @@
+name: Render and Deploy Notebooks
+on:
+  push:
+    branches: [ main ]
+    paths: [ '.github/workflows/deploy-notebooks.yml', 'session1/**', 'session2/**', '_quarto.yml', 'index.qmd' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ '.github/workflows/deploy-notebooks.yml', 'session1/**', 'session2/**', '_quarto.yml', 'index.qmd' ]
+jobs:
+  render-quarto-site:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Install Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+
+    - name: Render Quarto project
+      run: |
+        quarto render --execute
+        
+    - name: Dry run check (PR only)
+      if: github.event_name == 'pull_request'
+      run: |
+        echo "Dry run completed successfully!"
+        echo "Generated site structure:"
+        find _site -type f -name "*.html" | head -20
+        echo "Total HTML files: $(find _site -name "*.html" | wc -l)"
+        
+    - name: Deploy to GitHub Pages (main branch only)
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
+        publish_branch: gh-pages
+        keep_files: false
+        commit_message: 'Deploy quarto-rendered notebooks (commit ${{ github.sha }})'
