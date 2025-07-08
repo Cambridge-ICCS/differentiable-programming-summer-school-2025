@@ -5,8 +5,8 @@ program dense_jacobian
 
   implicit none
 
-  logical, parameter :: output = .false. ! Flag for whether to write output to file
-  integer, parameter :: n = 10000          ! Number of grid points
+  logical, parameter :: output = .true. ! Flag for whether to write output to file
+  integer, parameter :: n = 10          ! Number of grid points
   real, parameter :: h = 1.0            ! Uniform grid spacing
   real, dimension(n) :: u               ! Input vector
   real, dimension(n) :: approx          ! Central difference approximation
