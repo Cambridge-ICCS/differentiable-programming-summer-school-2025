@@ -1,6 +1,9 @@
 module g_mod
   implicit none
 
+  private
+  public :: g
+
   contains
 
     subroutine g(y, z)

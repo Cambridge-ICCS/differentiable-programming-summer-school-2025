@@ -1,6 +1,9 @@
 module f_mod
   implicit none
 
+  private
+  public :: f
+
   contains
 
     subroutine f(x, y)
