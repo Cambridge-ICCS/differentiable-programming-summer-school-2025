@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Pip install all requirements
+# Create a Python virtual environment and pip install all requirements
+python3 -m venv dp-venv
+source dp-venv/bin/activate
+echo "source $(pwd)/dp-venv/bin/activate" >>${HOME}/.bashrc
 pip install .
 
 # Install Tapenade and put it in the path
