@@ -2,10 +2,10 @@
 !   du/dt = u, u(0)=1
 ! using gradient descent.
 program gradient_descent
-  use theta_methods, only: theta_method
-  use theta_methods_d, only: theta_method_d
-  use cost, only: cost_function
-  use cost_d, only: cost_function_d
+  use theta_method_mod, only: theta_method
+  use theta_method_mod_d, only: theta_method_d
+  use cost_mod, only: cost_function
+  use cost_mod_d, only: cost_function_d
 
   implicit none
 
