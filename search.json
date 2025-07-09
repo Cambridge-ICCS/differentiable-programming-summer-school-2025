@@ -11,7 +11,7 @@
     "href": "session2/notebook.html#motivation",
     "title": "Session 2: Reverse mode differentiation and operator overloading",
     "section": "Motivation",
-    "text": "Motivation\n\nWere you interested in yesterday’s session but unclear how to make use of differentiable programming in practice?\nWe computed first-order derivatives for various programs. However, some advanced applications like uncertainty quantification requires Hessians (matrices of second derivatives). How do we calculate those?\nHave you ever wondered how neural network training actually works under the hood?\n\n\n\n\nFigure 1: Neural network schematic created with https://alexlenail.me/NN-SVG/index.html.\n\n Machine learning (ML) models typically have large numbers of parameters to be tuned and small numbers of outputs. Forward mode doesn’t seem like such a great fit…"
+    "text": "Motivation\n\nWere you interested in yesterday’s session but unclear how to make use of differentiable programming in practice?\nWe computed first-order derivatives for various programs. However, some advanced applications like uncertainty quantification requires Hessians (matrices of second derivatives). How do we calculate those?\nHave you ever wondered how neural network training actually works under the hood?\n\n\n\n\n\nFigure 1: Neural network schematic created with https://alexlenail.me/NN-SVG/index.html.\n\n Machine learning (ML) models typically have large numbers of parameters to be tuned and small numbers of outputs. Forward mode doesn’t seem like such a great fit…"
   },
   {
     "objectID": "session2/notebook.html#learning-objectives",
