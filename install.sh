@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# Create a Python virtual environment and pip install all requirements
-python3 -m venv dp-venv
-source dp-venv/bin/activate
-echo "source $(pwd)/dp-venv/bin/activate" >>${HOME}/.bashrc
+# # Session 1: Create a Python virtual environment and pip install all requirements
+# python3 -m venv dp-venv
+# source dp-venv/bin/activate
+# echo "source $(pwd)/dp-venv/bin/activate" >>${HOME}/.bashrc
+# Session 2: pip install all requirements
 pip install .
 
 # Install Tapenade and put it in the path
@@ -13,5 +14,5 @@ rm tapenade_3.16.tar
 export PATH=${PWD}/tapenade_3.16/bin:${PATH}
 echo "export PATH=${PWD}/tapenade_3.16/bin:${PATH}" >>${HOME}/.bashrc
 
-# # Session 2: copy over Firedrake notebooks
-# cp -r /opt/firedrake/docs/notebooks session2/exercises/firedrake/
+# Session 2: copy over Firedrake notebooks
+cp -r /opt/firedrake/docs/notebooks session2/exercises/firedrake/
