@@ -1,9 +1,8 @@
-include "f_d.f90"
-include "f_b.f90"
-
 ! Program for verifying the consistency of the forward mode and reverse mode derivatives of the
 ! function f.
 program dot_product_test
+  use f_mod_d, only: f_d
+  use f_mod_b, only: f_b
   implicit none
 
   real, dimension(2) :: x   ! Primal input
